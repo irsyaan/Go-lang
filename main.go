@@ -18,11 +18,12 @@ func main() {
 	if *nFlag != 0 {
 		n = *nFlag
 	} else if len(flag.Args()) > 0 {
-		// Try to parse the first positional argument if `-n` is not set
 		n, err = strconv.Atoi(flag.Arg(0))
 		if err != nil {
 			fmt.Println("Invalid number provided:", flag.Arg(0))
 			return
+		} else {
+			n = 5
 		}
 	}
 
